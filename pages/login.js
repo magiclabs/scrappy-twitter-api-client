@@ -26,7 +26,7 @@ const Login = () => {
       const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY);
       await magic.auth.loginWithMagicLink({
         email: body.email,
-      })
+      });
 
       /* 
       Generate a Decentralized Id Token which acts as a proof 
@@ -47,16 +47,12 @@ const Login = () => {
         body: JSON.stringify(body),
       });
       if (res.status === 200) {
-
         /*
         User was able to log in or sign up successfully,
         so we move them to the home page along with their
         accessToken.
         */
-        Router.push({
-          pathname: "/",
-          query: { data: JSON.stringify(accessToken) },
-        });
+        Router.push("/");
       } else {
         throw new Error(await res.text());
       }
