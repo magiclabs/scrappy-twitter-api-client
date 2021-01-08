@@ -54,7 +54,7 @@ const Login = () => {
     application logic to save the user's info in some kind of database.
     */
         const resFromGoServer = await fetch(
-          "https://scrappy-twitter-api-client.vercel.app/login",
+          "https://scrappy-secure-go-twitter-api.wl.r.appspot.com/login",
           {
             method: "POST",
             headers: {
@@ -65,8 +65,8 @@ const Login = () => {
           }
         );
 
-        console.log('resFromGoServer: ', resFromGoServer)
-        console.log('resFromGoServer.status: ', resFromGoServer.status)
+        console.log("resFromGoServer: ", resFromGoServer);
+        console.log("resFromGoServer.status: ", resFromGoServer.status);
 
         if (resFromGoServer.status === 200) {
           console.log(
@@ -74,21 +74,18 @@ const Login = () => {
             resFromGoServer
           );
 
-                  /*
+          /*
         User was able to log in or sign up successfully,
         so we move them to the home page along with their
         accessToken.
         */
-        Router.push("/");
-
+          Router.push("/");
         } else {
           throw new Error(
-            `Oh no, we ran into an error while calling the login endpoint: `,
+            `Oh no, we ran into an error while calling the server's login endpoint: `,
             await resFromGoServer.text()
           );
         }
-
-
       } else {
         throw new Error(await res.text());
       }
