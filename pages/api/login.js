@@ -21,7 +21,7 @@ export default async function login(req, res) {
     Second step happens at the server side; where you call your 
     application logic to save the user's info in some kind of database.
     */
-    const resFromGoServer = await fetch("http://localhost:8000/login", {
+    const resFromGoServer = await fetch("https://scrappy-twitter-api-client.vercel.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
