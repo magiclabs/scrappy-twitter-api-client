@@ -48,25 +48,19 @@ const Login = () => {
       });
       if (res.status === 200) {
         /* 
-    Below is a fetch request to the local Go server.
-    This is the first step in saving the authenticated user's info.
-    Second step happens at the server side; where you call your 
-    application logic to save the user's info in some kind of database.
-    */
-        const resFromGoServer = await fetch(
-          "https://scrappy-secure-go-twitter-api.wl.r.appspot.com/login",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + accessToken,
-            },
-            body: JSON.stringify(body),
-          }
-        );
-
-        console.log("resFromGoServer: ", resFromGoServer);
-        console.log("resFromGoServer.status: ", resFromGoServer.status);
+        Below is a fetch request to the local Go server.
+        This is the first step in saving the authenticated user's info.
+        Second step happens at the server side; where you call your 
+        application logic to save the user's info in some kind of database.
+        */
+        const resFromGoServer = await fetch("http://localhost:8080/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + accessToken,
+          },
+          body: JSON.stringify(body),
+        });
 
         if (resFromGoServer.status === 200) {
           console.log(
@@ -76,8 +70,7 @@ const Login = () => {
 
           /*
         User was able to log in or sign up successfully,
-        so we move them to the home page along with their
-        accessToken.
+        so we move them to the home page.
         */
           Router.push("/");
         } else {
