@@ -64,7 +64,7 @@ const Login = () => {
 
         if (resFromGoServer.status === 200) {
           console.log(
-            "YAY, we were able to call the login endpoint: ",
+            "YAY, we were able to make a request to the Go server /login endpoint: ",
             resFromGoServer
           );
 
