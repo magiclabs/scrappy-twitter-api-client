@@ -53,7 +53,7 @@ const Login = () => {
         Second step happens at the server side; where you call your 
         application logic to save the user's info in some kind of database.
         */
-        const resFromGoServer = await fetch("http://localhost:8080/login", {
+        const resFromGoServer = await fetch("https://scrappy-secure-go-twitter-api.wl.r.appspot.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
