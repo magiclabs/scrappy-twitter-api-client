@@ -4,6 +4,7 @@ import { withRouter } from "next/router";
 
 const Home = ({ router }) => {
   const user = useUser();
+  const accessToken = router.query.data ? JSON.parse(router.query.data) : false;
 
   return (
     <Layout>
@@ -21,7 +22,7 @@ const Home = ({ router }) => {
       - - -
       {user ? (
         <>
-          {user.accessToken ? (
+          {accessToken ? (
             <>
               <p>
                 Below is your <b>access token</b>. It has a lifespan of{" "}
