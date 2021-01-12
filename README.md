@@ -27,13 +27,13 @@ This Next.js app authenticates the user and generates the access token required 
     NEXT_PUBLIC_HAPI_IRON_SECRET=this-is-a-secret-value-with-at-least-32-characters
     ```
 
-    Note: The `HAPI_IRON_SECRET` is needed by @hapi/iron to encrypt an object. Feel free to leave the default value as is in dev.
+    **Note**: The `HAPI_IRON_SECRET` is needed by @hapi/iron to encrypt an object. Feel free to leave the default value as is in dev.
 5. yarn
 6. yarn dev
 7. Generate your access token and copy it (you'll need it soon).
 
 ## Test with Postman
-**There are two options to test your access token with the Scrappy Twitter API.** You could either follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to set up your own local Go server. 
+**There are two options to test your access token with the Scrappy Twitter API.** You could either follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to spin up your own local Go server. 
 
 OR you can follow the steps below to immediately use your access token on a Live Go server that is hosting the Scrappy Twitter API.
 
