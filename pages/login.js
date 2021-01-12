@@ -23,7 +23,7 @@ const Login = () => {
     const lifespan = 60 * 60 * 8; // Lifespan of the access token is 8 hours
 
     try {
-      const magic = new Magic(process.env.MAGIC_TEST_PUBLISHABLE_KEY);
+      const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_TEST_PUBLISHABLE_KEY);
       await magic.auth.loginWithMagicLink({
         email: body.email,
       });
