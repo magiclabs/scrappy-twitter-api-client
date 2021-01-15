@@ -5,9 +5,9 @@ export default async function login(req, res) {
   let loggedInUserInfo = {};
 
   try {
-    const accessToken = req.headers.authorization.substr(7);
-    const metadata = await magic.users.getMetadataByToken(accessToken);
-    loggedInUserInfo = { ...loggedInUserInfo, metadata, accessToken };
+    const didToken = req.headers.authorization.substr(7);
+    const metadata = await magic.users.getMetadataByToken(didToken);
+    loggedInUserInfo = { ...loggedInUserInfo, metadata, didToken };
 
     /*
     Use cookie to save logged in user's info and 

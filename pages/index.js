@@ -21,28 +21,27 @@ const Home = ({ router }) => {
       - - -
       {user ? (
         <>
-          {user.accessToken ? (
+          {user.didToken ? (
             <>
               <p>
-                Below is your <b>access token</b>. It has a lifespan of{" "}
+                Below is your <b>DID token</b>. It has a lifespan of{" "}
                 <b>8 hours </b>
                 🧚🏼‍♀️🪄. You'll need it to CREATE or DELETE a tweet.
               </p>
               - - -
               <p>
-                <b>Your token is</b>:
+                <b>Your DID token is</b>:
               </p>
-              <pre>{user.accessToken}</pre>- - -
+              <pre>{user.didToken}</pre>- - -
               <p>
                 ❗️ Make sure to save it as the <b>Bearer Token </b>
-                for the Postman Scrappy Twitter API Collection! (*Whew, that was
-                a mouthful 😅.)
+                for the Postman Scrappy Twitter API Collection!
               </p>
             </>
           ) : (
             <>
               <p>
-                😰 Your access token's gone. Hope ya saved it somewhere safe! If
+                😰 Your DID token's gone. Hope ya saved it somewhere safe! If
                 not, you can regenerate it. Just log out & log in again 😄.
               </p>
             </>
@@ -53,11 +52,11 @@ const Home = ({ router }) => {
           <p>
             With the Scrappy Twitter API, all users could READ the tweets.
             However, if you want to CREATE or DELETE a tweet, you'll first need
-            to create an account and get your personal <b>access token</b>.
+            to create an account and get your personal <b>DID token</b>.
           </p>
 
           <p>
-            <b>Warning:</b> Your access token will allow you to makes queries on
+            <b>Warning:</b> Your DID token will allow you to makes queries on
             the Scrappy Twitter API. Keep it private.
           </p>
         </>
