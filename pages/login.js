@@ -20,7 +20,7 @@ const Login = () => {
       email: e.currentTarget.email.value,
     };
 
-    const lifespan = 60 * 60 * 8; // Lifespan of the access token is 8 hours
+    const lifespan = 60 * 60 * 8; // Lifespan of the DID token is 8 hours
 
     try {
       const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_TEST_PUBLISHABLE_KEY);
@@ -31,24 +31,21 @@ const Login = () => {
       /* 
       Generate a Decentralized Id Token which acts as a proof 
       of authentication to resource servers.
-
-      💁🏻‍♀️ Instead of the name `idToken`, we'll be calling this 
-      the `accessToken`. ❗️
       */
-      const accessToken = await magic.user.getIdToken({ lifespan });
+      const didToken = await magic.user.getIdToken({ lifespan });
 
-      // Pass accessToken into Authorization request header.
+      // Pass didToken into Authorization request header.
       const res = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + accessToken,
+          Authorization: "Bearer " + didToken,
         },
         body: JSON.stringify(body),
       });
       if (res.status === 200) {
         /* 
-        Below is a fetch request to the local Go server.
+        Below is a fetch request to the production Go server. (Feel free to change it to your localhost url.)
         This is the first step in saving the authenticated user's info.
         Second step happens at the server side; where you call your 
         application logic to save the user's info in some kind of database.
@@ -57,7 +54,7 @@ const Login = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + accessToken,
+            Authorization: "Bearer " + didToken,
           },
           body: JSON.stringify(body),
         });
