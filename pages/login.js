@@ -50,7 +50,7 @@ const Login = () => {
         Second step happens at the server side; where you call your 
         application logic to save the user's info in some kind of database.
         */
-        const resFromGoServer = await fetch("https://scrappy-secure-go-twitter-api.wl.r.appspot.com/login", {
+        const resFromGoServer = await fetch("https://scrappy-secure-go-twitter-api.wl.r.appspot.com/save-user-info", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Login = () => {
 
         if (resFromGoServer.status === 200) {
           console.log(
-            "YAY, we were able to make a request to the Go server /login endpoint: ",
+            "YAY, we were able to make a request to the Go server /save-user-info endpoint: ",
             resFromGoServer
           );
 
@@ -72,7 +72,7 @@ const Login = () => {
           Router.push("/");
         } else {
           throw new Error(
-            `Oh no, we ran into an error while calling the server's login endpoint: `,
+            `Oh no, we ran into an error while calling the server's /save-user-info endpoint: `,
             await resFromGoServer.text()
           );
         }
