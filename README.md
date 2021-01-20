@@ -4,9 +4,8 @@ Scrappy Twitter API is a Go-backend project that is secured by the Magic SDK for
 # Scrappy Twitter API (CLIENT)
 This Next.js app authenticates the user and generates the [Decentralised ID Token (DIDT)](https://docs.magic.link/decentralized-id) required to make POST or DELETE requests with the [Scrappy Twitter API](https://github.com/seemcat/scrappy-twitter-api-server).
 
-# Noteworthy Dependencies
+# Noteworthy Package Dependencies:
 - [Magic SDK](https://docs.magic.link/client-sdk/web/get-started): Allows users to sign up or log in.
-- [cookie](https://github.com/jshttp/cookie): Lets us persist the DID token in a httpOnly cookie. httpOnly cookies can only be accessed by the browser so the cookies are not vulnerable to client-side scripting (e.g. JS).
 - [SWR](https://github.com/vercel/swr): Lets us get user info using a hook.
 - [@hapi/iron](https://hapi.dev/module/iron/): Lets us encrypt the login cookie for more security.
 
