@@ -32,7 +32,6 @@ This Next.js app authenticates the user and generates the [Decentralised ID Toke
 7. Generate your DID token and keep this open (you'll need it soon).
 
 ## Test with Postman
-Follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to spin up your own local Go server and to set up the Scrappy Twitter API Postman Collection.
-
-You'll be passing the DID token you just generated as a Bearer token into the Postman Collection’s HTTP Authorization request header.
-4. Send your requests to the **DEV** Scrappy Twitter API! 🎉
+1. Follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to spin up your own local Go server and to set up the Scrappy Twitter API Postman Collection.
+2. You'll be passing the DID token you just generated as a Bearer token into the Postman Collection’s HTTP Authorization request header.
+3. Send your requests to the **DEV** Scrappy Twitter API! 🎉
