@@ -29,14 +29,10 @@ This Next.js app authenticates the user and generates the [Decentralised ID Toke
     **Note**: The `HAPI_IRON_SECRET` is needed by @hapi/iron to encrypt an object. Feel free to leave the default value as is in dev.
 5. yarn
 6. yarn dev
-7. Generate your DID token and copy it (you'll need it soon).
+7. Generate your DID token and keep this open (you'll need it soon).
 
 ## Test with Postman
-**There are two options to test your DID token with the Scrappy Twitter API.** You could either follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to spin up your own local Go server. 
+Follow the steps listed [here](https://github.com/seemcat/scrappy-twitter-api-server) to spin up your own local Go server and to set up the Scrappy Twitter API Postman Collection.
 
-OR you can follow the steps below to immediately use your DID token on a Live Go server that is hosting the Scrappy Twitter API.
-
-1. Import the PROD version of the Scrappy Twitter API Postman Collection:
-    [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/595abf685418eeb96401)
-3. Paste the DID token you just copied as a Bearer token into the collection’s HTTP Authorization request header.
-4. Send your requests to the **Live** Scrappy Twitter API! 🎉
+You'll be passing the DID token you just generated as a Bearer token into the Postman Collection’s HTTP Authorization request header.
+4. Send your requests to the **DEV** Scrappy Twitter API! 🎉
