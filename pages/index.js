@@ -65,11 +65,11 @@ const Home = ({ router }) => {
       <p>
         ✨ This is a sample app for{" "}
         <a
-          href="https://dev.to/seemcat/how-to-secure-your-go-rest-api-with-magic-4la9-temp-slug-2086740"
+          href="https://dev.to/magiclabs/securing-a-go-backed-scrappy-twitter-api-with-magic-3o01"
           target="_blank"
           rel="noopener noreferrer"
         >
-          How to Secure your Go Rest API with Magic
+          Securing a Go-Backed Scrappy Twitter API with Magic
         </a>
         . ✨
       </p>
